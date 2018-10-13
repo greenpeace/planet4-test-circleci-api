@@ -1,0 +1,28 @@
+version: 2
+
+defaults: &defaults
+  docker:
+    - image: gcr.io/planet-4-151612/p4-builder:latest
+  working_directory:  /home/circleci
+
+jobs:
+  echo-vars-job:
+    <<: *defaults
+    working_directory: /tmp/workspace/src
+    steps:
+      - checkout
+      - attach_workspace:
+          at: /tmp/workspace
+      - run: bash /tmp/workspace/src/echo_vars.sh
+
+workflows:
+  version: 2
+  echo-vars-workflow:
+    jobs:
+    - echo-vars-job:
+        context: org-global
+        filters:
+          branches:
+            ignore: /.*/
+          tags:
+            only: /echo.*/
