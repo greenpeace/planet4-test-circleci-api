@@ -16,22 +16,21 @@ jobs:
       - run: bash /tmp/workspace/src/echo_vars.sh
 
 workflows:
-  version: 2
-  echo-vars-tag:
-    jobs:
-    - echo-vars-job:
-        context: org-global
-        filters:
-          branches:
-            only: /.*/
-        tags:
-            ignore: /.*/
   echo-vars-branch:
     jobs:
-    - echo-vars-job:
-        context: org-global
-        filters:
-          branches:
-            ignore: /.*/
-          tags:
-            only: /echo.*/
+      - echo-vars-job:
+          context: org-global
+          filters:
+            branches:
+              only: /.*/
+            tags:
+              ignore: /.*/
+  echo-vars-tag:
+    jobs:
+      - echo-vars-job:
+          context: org-global
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /echo.*/
