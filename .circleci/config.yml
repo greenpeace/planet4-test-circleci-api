@@ -16,7 +16,7 @@ jobs:
       - run: bash /tmp/workspace/src/echo_vars.sh
 
 workflows:
-  version: 2
+  version: 2.1
   echo-vars-branch:
     jobs:
       - echo-vars-job:
