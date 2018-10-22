@@ -24,7 +24,7 @@ curl \
   -X POST \
   https://circleci.com/api/v1.1/project/${VCS_TYPE:-github}/${user}/${repo}/envvar
 
-
+echo ""
 echo "User:    ${user}"
 echo "Project: ${repo}"
 
@@ -34,7 +34,10 @@ echo "Value:   ${value}"
 json="{
   \"$ref\": \"$value\"
 }"
-
+echo ""
+echo "The json is"
+echo $json
+echo ""
 curl \
   --header "Content-Type: application/json" \
   -d "$json" \
