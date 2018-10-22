@@ -16,7 +16,14 @@ echo ""
 echo $JOB_ENV_CONSTANT1
 
 echo ""
-echo "We will echo the TESTVAR3 variable . We have not defined it, so it will only show something if API works ok"
+echo "We will echo the PROJECT_ENV_VALUE1 variable. It is defined in the project settings"
 echo ""
 
-echo $TESTVAR3
+echo $PROJECT_ENV_VALUE1
+
+
+echo ""
+echo "We will echo the PROJECT_ENV_VALUE2 variable. We have not defined it beforehand, but we will send it via the api"
+echo ""
+
+echo $PROJECT_ENV_VALUE2
