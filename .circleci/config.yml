@@ -5,9 +5,15 @@ defaults: &defaults
     - image: gcr.io/planet-4-151612/p4-builder:latest
   working_directory:  /home/circleci
 
+job_environments:
+  common_environment: &common_environment
+    JOB_ENV_CONSTANT1: Job Environment Constant 1 works fine
+
 jobs:
   echo-vars-job:
     <<: *defaults
+    environment:
+      <<: *common_environment
     working_directory: /tmp/workspace/src
     steps:
       - checkout
