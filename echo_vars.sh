@@ -13,7 +13,7 @@ echo ""
 echo "We will echo the JOB_ENV_CONSTANT1 variable."
 echo ""
 
-echo JOB_ENV_CONSTANT1
+echo $JOB_ENV_CONSTANT1
 
 echo ""
 echo "We will echo the TESTVAR3 variable . We have not defined it, so it will only show something if API works ok"
