@@ -24,6 +24,7 @@ jobs:
 workflows:
   version: 2.1
   echo-vars-branch:
+    context: org-global
     jobs:
       - echo-vars-job:
           context: org-global
@@ -33,6 +34,7 @@ workflows:
             tags:
               ignore: /.*/
   echo-vars-tag:
+    context: org-global
     jobs:
       - echo-vars-job:
           context: org-global
