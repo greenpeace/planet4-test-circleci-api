@@ -27,3 +27,9 @@ echo "We will echo the PROJECT_ENV_VALUE2 variable. We have not defined it befor
 echo ""
 
 echo $PROJECT_ENV_VALUE2
+
+echo ""
+echo "We will echo the Org Context variable TEST_CI_API variable."
+echo ""
+
+echo $TEST_CI_API
