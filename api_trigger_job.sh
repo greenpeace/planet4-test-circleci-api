@@ -17,8 +17,7 @@ echo "Vef:     ${var}"
 echo "Value:   ${value}"
 
 json="{
-  \"$var\": \"$value\",
-  \"build_parameters\": {\"CIRCLE_JOB\": \"$job\" }
+  \"build_parameters\": {\"CIRCLE_JOB\": \"$job\", \"$var\": \"$value\" }
 }"
 echo ""
 echo "The json is"

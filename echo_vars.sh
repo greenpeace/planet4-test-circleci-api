@@ -33,3 +33,12 @@ echo "We will echo the Org Context variable TEST_CI_API variable."
 echo ""
 
 echo $TEST_CI_API
+
+
+echo ""
+echo "We will echo the job parameter named MyVar. Only there if inserted via a job."
+echo ""
+
+echo $MyVar
+
+
