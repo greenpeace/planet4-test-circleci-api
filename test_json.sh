@@ -23,15 +23,7 @@ echo ""
 echo "The json is"
 echo $json
 echo ""
-reply_json=$(curl \
-  --header "Content-Type: application/json" \
-  -d "$json" \
-  -u "${CIRCLE_TOKEN}:" \
-  -X POST \
-  https://circleci.com/api/v1.1/project/${VCS_TYPE:-github}/${user}/${repo}/tree/master)
 
-#echo "The reply json is $reply_json"
-
-build_num=$(echo $reply_json | jq '.build_num')
+build_num=$(echo $json | jq '.build_parameters')
 
 echo "The build number is $build_num"
